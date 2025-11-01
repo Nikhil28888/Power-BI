@@ -1,0 +1,13 @@
+When you create a Line Chart, follow these steps:
+Step 1: Right-click on the Staff table.
+Step 2: Click on “New measure” and write a small piece of code
+
+Headcount (Cumulative) = 
+CALCULATE (
+    COUNTROWS ( 'staff' ),
+    FILTER (
+        ALL ( 'staff'[Year] ),
+        'staff'[Year] <= MAX ( 'staff'[Year] )
+    )
+)
+ 
